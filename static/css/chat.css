@@ -1,0 +1,125 @@
+html {
+    scroll-behavior: smooth;
+    font-family: Helvetica, sans-serif, Arial;
+}
+
+body {
+    margin: 0 auto;
+    background-color: #222;
+}
+
+.chat-container {
+    width: 70%; /* Keep the width as 80% */
+    position: relative;
+    scroll-behavior: smooth;
+    hyphens: auto;
+    padding: 20px;
+    height: calc(100vh - 100px); /* Keep the height as 100vh minus the header height */
+    overflow-y: auto; /* Keep the overflow-y as auto */
+    margin-left: 30px; /* Set the left margin to 0 */
+    margin-right: auto; /* Set the right margin to auto */
+}
+
+.chat-bar-input-block {
+    position: fixed; /* Keep the position as fixed */
+    bottom: 0;
+    left: 30px; /* Set the left position to 0 */
+    transform: none; /* Remove the translateX */
+    width: 70%; /* Keep the width as 80% */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(214, 214, 214);
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+}
+
+.chat-bar-icons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+    font-size: 20px;
+}
+
+#chat-icon:hover {
+    opacity: .7;
+}
+
+/* Chat bubbles */
+
+#userInput {
+    width: 75%;
+}
+
+.input-box {
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: #000;
+    background-color: white;
+    outline: none
+}
+
+.userText {
+    color: white;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: right;
+    clear: both;
+}
+
+.userText span {
+    line-height: 1.5em;
+    display: inline-block;
+    background: #49DACF;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-right-radius: 2px;
+    max-width: 80%;
+    margin-right: 10px;
+    animation: floatup .5s forwards
+}
+
+.botText {
+    color: #000;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: left;
+}
+
+.botText span {
+    line-height: 1.5em;
+    display: inline-block;
+    background: #D6D6D6;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-left-radius: 2px;
+    max-width: 80%;
+    margin-left: 10px;
+    animation: floatup .5s forwards
+}
+
+@keyframes floatup {
+    from {
+        transform: translateY(14px);
+        opacity: .0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .chat-container {
+        padding: 10px;
+    }
+    .chat-bar-input-block {
+        padding: 5px;
+    }
+}
